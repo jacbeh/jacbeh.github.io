@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacqueline Behncke — Ocean Biogeochemist</title>
+<meta name="description" content="Dr. Jacqueline Behncke, postdoctoral researcher in ocean biogeochemistry, working on air–sea CO2 exchange, observing system design and machine learning.">
+<meta name="author" content="Jacqueline Behncke">
+
+<meta property="og:title" content="Jacqueline Behncke — Ocean Biogeochemist">
+<meta property="og:description" content="Marine carbon cycle scientist working on air–sea CO2 exchange, observing system design and machine learning.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jacbeh.github.io">
+<meta property="og:image" content="https://jacbeh.github.io/img/banner.jpg">
+
+<link rel="icon" href="img/favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   Palette from the CV: pale blue paper, slate ink, orange
+   accent used only in small doses — rules, rings, borders.
+   Secondary colours mark categories, never fill large areas.
+   ============================================================ */
+:root{
+  --paper:      #f1f7fb;
+  --paper-2:    #e6eff5;
+  --white:      #ffffff;
+  --ink:        #2c4a5e;
+  --ink-deep:   #1f3646;
+  --text:       #33505f;
+  --muted:      #6d8fa5;
+  --rule:       #cfdfe9;
+
+  --accent:     #e08b2a;
+  --accent-dk:  #b96f16;
+  --link:       #3f7ca3;
+
+  --c-purple:#7b4b94;  --c-teal:#1f8a70;   --c-blue:#2f6f9f;
+  --c-orange:#c47a1c;  --c-red:#b2182b;    --c-cyan:#2a7f9e;
+  --c-olive:#5a7a2e;   --c-plum:#9a4f6d;
+
+  --uptake:#2166ac; --outgas:#b2182b;
+
+  --sidebar-w: 17rem;
+  --measure:   64ch;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .bar span{width:var(--pct)!important}
+}
+
+body{
+  margin:0;background:var(--paper);color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+
+a{color:var(--link);text-decoration:none;border-bottom:1px solid rgba(63,124,163,.32)}
+a:hover{border-bottom-color:var(--link)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- Sidebar ------------------------------------------------ */
+.sidebar{
+  position:fixed;inset:0 auto 0 0;width:var(--sidebar-w);
+  background:var(--ink);color:#fff;
+  display:flex;flex-direction:column;padding:2.25rem 1.75rem;z-index:30;
+}
+.sidebar::after{
+  content:"";position:absolute;top:0;right:0;bottom:0;width:4px;
+  background:linear-gradient(to bottom,var(--outgas) 0%,#f0eae2 50%,var(--uptake) 100%);
+}
+.portrait{
+  width:9rem;height:9rem;border-radius:50%;object-fit:cover;
+  display:block;margin:0 auto 1rem;
+  border:3px solid var(--accent);background:var(--ink-deep);
+}
+.sidebar-name{
+  text-align:center;font-family:"Zilla Slab",serif;
+  font-size:1.15rem;font-weight:600;margin:0 0 1.5rem;
+}
+.sidebar nav ul{list-style:none;margin:0;padding:0}
+.sidebar nav a{
+  display:block;padding:.34rem 0 .34rem .9rem;color:rgba(255,255,255,.62);
+  font-family:"Zilla Slab",serif;font-weight:500;font-size:1rem;
+  letter-spacing:.04em;text-transform:uppercase;
+  border:0;border-left:2px solid transparent;
+  transition:color .18s,border-color .18s;
+}
+.sidebar nav a:hover{color:#fff}
+.sidebar nav a.active{color:#fff;font-weight:700;border-left-color:var(--accent)}
+.sidebar-foot{
+  margin-top:auto;font-family:"IBM Plex Mono",monospace;
+  font-size:.68rem;color:rgba(255,255,255,.38);line-height:1.6;
+}
+
+/* ---------- Layout -------------------------------------------------- */
+main{margin-left:var(--sidebar-w)}
+section{padding:4.5rem 4rem}
+section:nth-of-type(even){background:var(--paper-2)}
+
+h2{
+  font-family:"Zilla Slab",serif;
+  font-size:1.55rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;
+  color:var(--ink);margin:0 0 2.25rem;padding-bottom:.45rem;
+  border-bottom:3px solid var(--accent);display:inline-block;
+}
+.section-head{display:block;margin-bottom:2.25rem}
+.section-head h2{margin-bottom:0}
+
+/* ---------- Hero ---------------------------------------------------- */
+#about{padding:0;background:var(--paper)}
+.banner{
+  position:relative;height:clamp(13rem,32vh,20rem);overflow:hidden;
+  background:linear-gradient(120deg,var(--ink-deep) 0%,var(--link) 60%,#7fa8bf 100%);
+}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+.banner::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(31,54,70,.12) 0%,rgba(31,54,70,.45) 100%);
+}
+.hero-body{padding:2.5rem 4rem 4.5rem}
+.name{
+  font-family:"Zilla Slab",serif;
+  font-size:clamp(2.4rem,5.2vw,3.9rem);font-weight:700;line-height:1.05;
+  margin:0 0 .35rem;color:var(--ink);
+}
+.name .surname{color:var(--accent)}
+.role{
+  font-family:"IBM Plex Mono",monospace;font-size:.8rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 1.9rem;
+}
+.thesis{
+  font-size:clamp(1.2rem,2.1vw,1.55rem);font-weight:300;line-height:1.45;
+  max-width:34ch;margin:0 0 1.7rem;
+  border-left:3px solid var(--accent);padding-left:1.3rem;color:var(--ink);
+}
+.thesis .attrib{
+  display:block;margin-top:.7rem;
+  font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.06em;
+  color:var(--muted);font-weight:400;
+}
+.thesis .attrib a{color:var(--muted);border-bottom-color:var(--rule)}
+.thesis .attrib a:hover{color:var(--ink);border-bottom-color:var(--muted)}
+.intro{max-width:var(--measure);margin:0 0 2.1rem}
+
+.links{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;margin:0;padding:0}
+.links a{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:"IBM Plex Mono",monospace;font-size:.75rem;letter-spacing:.06em;
+  padding:.55rem 1.05rem;border:1px solid var(--rule);border-radius:3px;
+  color:var(--ink);background:var(--white);
+  transition:background .18s,border-color .18s,color .18s;
+}
+.links a:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.links a.primary{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:500}
+.links a.primary:hover{background:var(--ink-deep);border-color:var(--ink-deep)}
+
+/* ---------- Entries ------------------------------------------------- */
+.entry{
+  display:grid;grid-template-columns:5.6rem 9.5rem 1fr;gap:0 1.6rem;
+  padding-bottom:2rem;margin-bottom:2rem;border-bottom:1px solid var(--rule);
+  align-items:center;
+}
+.entry:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.logo{
+  position:relative;width:4.8rem;height:4.8rem;border-radius:50%;
+  overflow:hidden;justify-self:center;align-self:center;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"Zilla Slab",serif;font-weight:700;font-size:.86rem;
+  color:#fff;background:var(--muted);border:3px solid var(--accent);
+}
+.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#fff}
+.logo.c-hereon {background:var(--c-teal)}
+.logo.c-geomar {background:var(--c-blue)}
+.logo.c-mpi    {background:var(--ink)}
+.logo.c-uni    {background:var(--c-purple)}
+.logo.c-potsdam{background:var(--c-plum)}
+.logo.c-bund   {background:var(--c-olive)}
+
+.when{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--muted);align-self:center}
+.entry h3{
+  font-family:"Zilla Slab",serif;font-size:1.3rem;font-weight:600;
+  line-height:1.25;margin:0 0 .12rem;color:var(--ink);
+}
+.where{font-size:.92rem;color:var(--link);margin:0 0 .7rem}
+.entry p{margin:0 0 .55rem;max-width:var(--measure)}
+.entry ul{margin:.4rem 0 0;padding-left:1.1rem;max-width:var(--measure)}
+.entry li{margin-bottom:.3rem}
+.entry > div:last-child > :last-child{margin-bottom:0}
+.note{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.68rem;
+  letter-spacing:.05em;color:var(--accent-dk);border:1px solid var(--accent);
+  border-radius:3px;padding:.12rem .5rem;margin-top:.35rem;
+}
+
+/* ---------- Research ------------------------------------------------ */
+.research-lead{font-size:1.06rem;max-width:var(--measure);margin:0 0 2rem}
+.keywords{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0 0 3rem;padding:0}
+.keywords li{
+  font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.04em;
+  padding:.36rem .8rem;border-radius:999px;
+  background:var(--white);border:1px solid var(--rule);color:var(--ink);
+}
+.keywords li:nth-child(4n+1){border-color:var(--c-blue);color:var(--c-blue)}
+.keywords li:nth-child(4n+2){border-color:var(--c-teal);color:var(--c-teal)}
+.keywords li:nth-child(4n+3){border-color:var(--c-purple);color:var(--c-purple)}
+.keywords li:nth-child(4n+4){border-color:var(--accent-dk);color:var(--accent-dk)}
+
+/* ---------- Highlights ---------------------------------------------- */
+/* ---------- Research topic links -------------------------------------- */
+.briefs{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1rem}
+.brief-link{
+  display:flex;flex-direction:column;
+  background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--c);
+  border-radius:4px;padding:1.15rem 1.25rem 1.2rem;color:var(--text);
+  transition:border-color .18s,transform .18s;
+}
+.brief-link:hover{border-color:var(--c);transform:translateY(-2px)}
+.brief-link .kicker{
+  font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--c);margin:0 0 .5rem;
+}
+.brief-link h4{
+  font-family:"Zilla Slab",serif;font-size:1.05rem;font-weight:600;
+  color:var(--ink);margin:0 0 .9rem;line-height:1.35;
+}
+.brief-link .go{
+  margin-top:auto;font-family:"IBM Plex Mono",monospace;font-size:.7rem;
+  letter-spacing:.06em;color:var(--c);
+}
+
+/* ---------- Disclosure: findings in brief ----------------------------- */
+.brief{
+  margin-top:.8rem;max-width:var(--measure);
+  background:var(--white);border:1px solid var(--rule);border-radius:4px;
+}
+.brief summary{
+  cursor:pointer;list-style:none;padding:.6rem .95rem;
+  font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-dk);
+  display:flex;align-items:center;gap:.55rem;
+}
+.brief summary::-webkit-details-marker{display:none}
+.brief summary::before{content:"+";font-size:1rem;line-height:1;width:.7rem}
+.brief[open] summary::before{content:"–"}
+.brief summary:hover{color:var(--ink)}
+.brief .inner{padding:.2rem .95rem 1.05rem;border-top:1px solid var(--rule)}
+.brief .inner p{margin:.9rem 0 0;font-size:.93rem}
+
+/* ---------- Publications -------------------------------------------- */
+.pub{
+  padding-bottom:1.1rem;margin-bottom:1.1rem;border-bottom:1px solid var(--rule);
+  max-width:var(--measure);
+}
+.pub:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.pub .cite{margin:0}
+.pub .cite strong{font-weight:600;color:var(--ink)}
+.tag{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.64rem;
+  letter-spacing:.1em;text-transform:uppercase;padding:.15rem .5rem;margin-bottom:.5rem;
+  border:1px solid var(--rule);border-radius:3px;color:var(--muted);
+}
+.tag.review{border-color:var(--c-red);color:var(--c-red)}
+.tag.prep{border-color:var(--accent);color:var(--accent-dk)}
+
+h3.subhead{
+  font-family:"Zilla Slab",serif;font-size:1.15rem;font-weight:600;
+  color:var(--ink);margin:2.75rem 0 1.3rem;
+  padding-left:.7rem;border-left:3px solid var(--accent);
+}
+h3.subhead:first-of-type{margin-top:0}
+
+/* ---------- Talks ---------------------------------------------------- */
+.talk{
+  display:grid;grid-template-columns:7rem 1fr;gap:0 2rem;
+  padding:.7rem 0;border-bottom:1px solid var(--rule);align-items:baseline;
+}
+.talk:last-child{border-bottom:0}
+.talk .venue{font-weight:500;color:var(--ink)}
+.talk .title{color:var(--muted);font-size:.93rem;display:block}
+.invited{
+  font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-dk);border:1px solid var(--accent);
+  border-radius:3px;padding:.05rem .4rem;margin-left:.45rem;white-space:nowrap;
+}
+
+/* ---------- Skill bars ------------------------------------------------ */
+.bars{max-width:46rem;margin:0 0 1rem}
+.bar{
+  display:flex;align-items:stretch;height:2.1rem;margin-bottom:.7rem;
+  border-radius:3px;overflow:hidden;background:var(--white);border:1px solid var(--rule);
+}
+.bar b{
+  flex:none;width:11rem;display:flex;align-items:center;padding:0 .9rem;
+  color:#fff;font-weight:600;font-size:.85rem;background:var(--col);
+}
+.bar span{
+  display:flex;align-items:center;justify-content:flex-end;padding:0 .8rem;
+  width:0;background:color-mix(in srgb,var(--col) 40%,white);
+  color:#fff;font-family:"IBM Plex Mono",monospace;font-size:.68rem;
+  letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+  transition:width 1.1s cubic-bezier(.22,.8,.3,1);
+}
+.bars.run .bar span{width:var(--pct)}
+
+/* ---------- Tiles ------------------------------------------------------ */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.25rem}
+.tile{
+  background:var(--white);border:1px solid var(--rule);border-radius:4px;
+  border-top:3px solid var(--c);padding:1.3rem 1.4rem 1.45rem;
+}
+.tile h4{
+  font-family:"Zilla Slab",serif;font-size:1.05rem;font-weight:600;
+  color:var(--c);margin:0 0 .9rem;
+}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.chips li{
+  font-size:.82rem;padding:.28rem .7rem;border-radius:3px;
+  background:color-mix(in srgb,var(--c) 9%,white);
+  color:color-mix(in srgb,var(--c) 78%,black);
+}
+
+/* ---------- Cards (outreach) -------------------------------------------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.25rem}
+.card{
+  background:var(--white);border:1px solid var(--rule);border-radius:4px;
+  border-top:3px solid var(--c);padding:1.3rem 1.4rem 1.4rem;
+}
+.card h4{
+  font-family:"Zilla Slab",serif;font-size:1.05rem;font-weight:600;
+  color:var(--c);margin:0 0 .8rem;
+}
+.card ul{list-style:none;margin:0;padding:0}
+.card li{padding:.5rem 0;border-bottom:1px dashed var(--rule);font-size:.93rem;line-height:1.55}
+.card li:last-child{border-bottom:0;padding-bottom:0}
+.card li:first-child{padding-top:0}
+.card .yr{
+  display:block;font-family:"IBM Plex Mono",monospace;font-size:.68rem;
+  color:var(--muted);letter-spacing:.04em;margin-top:.15rem;
+}
+
+/* ---------- Awards ------------------------------------------------------- */
+.awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.25rem}
+.award{
+  background:var(--white);border:1px solid var(--rule);border-radius:4px;
+  padding:1.1rem 1.25rem;border-left:4px solid var(--c);
+}
+.award strong{display:block;font-family:"Zilla Slab",serif;font-size:1rem;color:var(--ink);margin-bottom:.2rem}
+.award span{font-size:.9rem;color:var(--muted)}
+
+/* ---------- Gallery ------------------------------------------------------ */
+.gallery{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:.9rem;
+}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:4px;background:var(--paper-2)}
+.gallery img{
+  width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;display:block;
+  transition:transform .5s cubic-bezier(.22,.8,.3,1);
+}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:1.6rem .8rem .55rem;
+  background:linear-gradient(180deg,rgba(31,54,70,0) 0%,rgba(31,54,70,.75) 100%);
+  color:#fff;font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.04em;
+}
+
+/* ---------- Contact ------------------------------------------------------- */
+#contact{background:var(--ink);color:rgba(255,255,255,.85)}
+#contact h2{color:#fff;border-bottom-color:var(--accent)}
+#contact a{color:#ffce97;border-bottom-color:rgba(255,206,151,.35)}
+#contact a:hover{border-bottom-color:#ffce97}
+.contact-line{font-family:"IBM Plex Mono",monospace;font-size:.95rem;margin:0 0 .8rem}
+.colophon{
+  margin-top:2.75rem;font-family:"IBM Plex Mono",monospace;
+  font-size:.7rem;color:rgba(255,255,255,.35);line-height:1.7;
+}
+
+/* ---------- Responsive ----------------------------------------------------- */
+.menu-btn{display:none}
+
+@media (max-width:900px){
+  .sidebar{
+    position:sticky;top:0;inset:auto;width:100%;height:auto;
+    flex-direction:row;align-items:center;justify-content:space-between;padding:.8rem 1.25rem;
+  }
+  .sidebar::after{
+    top:auto;bottom:0;left:0;right:0;width:auto;height:3px;
+    background:linear-gradient(to right,var(--uptake) 0%,#f0eae2 50%,var(--outgas) 100%);
+  }
+  .portrait{width:2.6rem;height:2.6rem;margin:0;border-width:2px}
+  .sidebar-name{margin:0;font-size:1rem}
+  .sidebar-foot{display:none}
+  .menu-btn{
+    display:block;background:none;border:1px solid rgba(255,255,255,.35);color:#fff;
+    border-radius:3px;padding:.4rem .7rem;cursor:pointer;
+    font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  }
+  .sidebar nav{
+    display:none;position:absolute;top:100%;left:0;right:0;background:var(--ink);
+    padding:.75rem 1.25rem 1.5rem;border-top:1px solid rgba(255,255,255,.12);
+  }
+  .sidebar nav.open{display:block}
+
+  main{margin-left:0}
+  section{padding:3rem 1.4rem}
+  .hero-body{padding:2rem 1.4rem 3.2rem}
+  .entry{grid-template-columns:4.4rem 1fr;gap:0 1.1rem;align-items:start}
+  .logo{width:4rem;height:4rem;font-size:.78rem}
+  .entry .when{grid-column:2;margin-bottom:.3rem}
+  .entry > div:last-child{grid-column:2}
+  .talk{grid-template-columns:1fr;gap:0}
+  .bar b{width:8.5rem;font-size:.78rem}
+}
+
+@media print{
+  .sidebar,.banner,.gallery{display:none}
+  main{margin-left:0}
+  section{padding:1.2rem 0;break-inside:avoid;background:none!important}
+  #contact{background:none;color:var(--text)}
+  #contact h2,#contact a{color:var(--text)}
+}
+</style>
+</head>
+
+<body>
+
+<aside class="sidebar">
+  <img class="portrait" src="img/profile.jpg" alt="Jacqueline Behncke">
+  <p class="sidebar-name">Jacqueline Behncke</p>
+  <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" aria-label="Sections">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#outreach">Outreach</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-foot">
+    air–sea CO<sub>2</sub> flux<br>
+    outgassing → uptake
+  </div>
+</aside>
+
+<main>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="banner"><img src="img/banner.jpg" alt=""></div>
+  <div class="hero-body">
+    <h1 class="name">Jacqueline <span class="surname">Behncke</span></h1>
+    <p class="role">Dr. rer. nat. · Postdoctoral Researcher · Ocean Biogeochemist</p>
+
+    <p class="thesis">&ldquo;Nothing in life is to be feared, it is only to be understood.&rdquo;
+      <span class="attrib">Marie Curie</span></p>
+
+    <p class="intro">I am a marine carbon cycle scientist combining in situ and satellite observations, model data, and machine learning to study air–sea CO<sub>2</sub> exchange and surface ocean carbonate dynamics. My work spans the design of effective observing systems — simulating which platforms are best equipped with sensors, with a focus on the Southern Ocean — as well as small-scale coastal processes and the question of how reliably marine CO<sub>2</sub> removal can be measured. I am based at Helmholtz-Zentrum Hereon and GEOMAR Helmholtz Centre for Ocean Research Kiel.</p>
+
+    <ul class="links">
+      <li><a class="primary" href="cv/Behncke_CV.pdf" download>↓ Download CV (PDF)</a></li>
+      <li><a href="mailto:CHANGE-ME@hereon.de">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/jacqueline-behncke/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://orcid.org/CHANGE-ME" target="_blank" rel="noopener">ORCID</a></li>
+      <li><a href="https://github.com/jacbeh" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== RESEARCH ===================== -->
+<section id="research">
+  <div class="section-head"><h2>Research</h2></div>
+
+  <p class="research-lead">I am a data scientist working on the ocean carbon cycle: across every project I study the processes that move carbon between the ocean and the atmosphere, and how well we can observe them. Much of the Southern Ocean is sampled too sparsely to constrain its uptake of CO<sub>2</sub>, so I ask which platforms could close those gaps and by how much — racing yachts and other citizen-science vessels carrying underway <em>p</em>CO<sub>2</sub> sensors, opportunistic sampling from fisheries, autonomous platforms — testing each strategy with machine learning inside model testbeds where the true flux field is known. At smaller scales I use high-frequency observations to resolve coastal processes such as phytoplankton blooms. Alongside this I work on marine carbon dioxide removal at Hereon, assessing the feasibility and environmental impacts of mCDR approaches and the monitoring, reporting and verification strategies they will require.</p>
+
+  <ul class="keywords">
+    <li>Data analysis</li>
+    <li>Statistics</li>
+    <li>Machine learning</li>
+    <li>Model, in situ &amp; remote sensing data</li>
+    <li>Quantification of the ocean carbon sink</li>
+    <li>Marine CO<sub>2</sub> removal</li>
+    <li>Southern Ocean</li>
+    <li>Coastal carbon cycling</li>
+  </ul>
+
+  <h3 class="subhead">Findings in brief</h3>
+  <div class="briefs">
+
+    <a class="brief-link" style="--c:var(--c-purple)" href="segeln.html">
+      <span class="kicker">Popular science · auf Deutsch</span>
+      <h4>Jede Messung zählt — Segeln für die Klimaforschung</h4>
+      <span class="go">Ganzen Artikel lesen →</span>
+    </a>
+
+    <a class="brief-link" style="--c:var(--c-blue)" href="#pub-scirep">
+      <span class="kicker">Scientific Reports · 2024</span>
+      <h4>How much does a single measurement campaign matter when estimating the ocean carbon sink? ⛵</h4>
+      <span class="go">Findings in brief →</span>
+    </a>
+
+    <a class="brief-link" style="--c:var(--c-teal)" href="#pub-sciadv">
+      <span class="kicker">Science Advances · 2026</span>
+      <h4>Can sailboat data improve the estimate, and how much would more circumnavigations help? ⛵</h4>
+      <span class="go">Findings in brief →</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience">
+  <div class="section-head"><h2>Experience</h2></div>
+
+  <div class="entry">
+    <div class="logo c-hereon"><img src="img/logo-hereon.png" alt="">HER</div>
+    <div class="when">08/2026 – est. 08/2030</div>
+    <div>
+      <h3>Wissenschaftliche Mitarbeiterin</h3>
+      <p class="where">Helmholtz-Zentrum Hereon, Geesthacht (GER)</p>
+      <p>Assessing marine carbon dioxide removal (mCDR) approaches through analysis of air–sea CO<sub>2</sub> exchange measurements, and evaluating feasibility, efficiency, environmental impacts and monitoring, reporting and verification (MRV) strategies within the MAR-CO<sub>2</sub> project.</p>
+      <span class="note">50% until 12/2026, in parallel with GEOMAR; full-time thereafter</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="logo c-geomar"><img src="img/logo-geomar.png" alt="">GEO</div>
+    <div class="when">01/2026 – 12/2026</div>
+    <div>
+      <h3>Postdoctoral Researcher</h3>
+      <p class="where">GEOMAR Helmholtz Centre for Ocean Research Kiel (GER)</p>
+      <p>Developing and evaluating ocean carbon observing strategies for the Southern Ocean carbon sink using observing system simulation experiments, within the EU-funded TRICUSO project (Three Research Infrastructures Together: Carbon Uptake Southern Ocean).</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="logo c-mpi"><img src="img/logo-mpi.png" alt="">MPI</div>
+    <div class="when">10/2025 – 12/2025</div>
+    <div>
+      <h3>Postdoctoral Researcher</h3>
+      <p class="where">Max Planck Institute for Meteorology, Hamburg (GER)</p>
+      <p>Observing system simulation experiments with the HAMOCC ocean biogeochemistry model to reduce air–sea CO<sub>2</sub> flux uncertainties. Working group: Modeling the carbon cycle in the Earth system.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="logo c-mpi"><img src="img/logo-mpi.png" alt="">MPI</div>
+    <div class="when">04/2022 – 10/2025</div>
+    <div>
+      <h3>PhD Researcher</h3>
+      <p class="where">Max Planck Institute for Meteorology, Hamburg (GER)</p>
+      <p>Investigating the role of novel citizen-science sailboats in advancing our understanding of the ocean carbon sink, including uncertainty quantification of air–sea CO<sub>2</sub> flux estimates and evaluation of high-frequency <em>p</em>CO<sub>2</sub> observations.</p>
+      <ul>
+        <li>Data analysis and visualisation, machine learning, scientific writing, peer review, mentoring and supervision</li>
+        <li>SOLAS Summer School, Mindelo, Cabo Verde (2023); Southern Ocean Summer School, Cargèse, Corsica (2024)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="logo c-mpi"><img src="img/logo-mpi.png" alt="">MPI</div>
+    <div class="when">04/2021 – 02/2022</div>
+    <div>
+      <h3>Research Assistant</h3>
+      <p class="where">Max Planck Institute for Meteorology, Hamburg (GER)</p>
+      <p>Analysis of three years of global sailing-yacht observations to investigate regional variability in surface ocean carbon, including the effects of temperature and phytoplankton activity.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="logo c-geomar"><img src="img/logo-geomar.png" alt="">GEO</div>
+    <div class="when">2019 – 2020</div>
+    <div>
+      <h3>Research / Student Assistant</h3>
+      <p class="where">GEOMAR Helmholtz Centre for Ocean Research — Peru · Gran Canaria · Kiel</p>
+      <p>Laboratory and field experiments: sample preparation, analytical methods, data processing, statistical analysis and quality control in an interdisciplinary research environment.</p>
+      <ul>
+        <li><strong>02/2020 – 04/2020, Callao (PER)</strong> — stable isotope incubations quantifying phytoplankton productivity under varying light and nutrient conditions in the Humboldt upwelling system (CUSCO).</li>
+        <li><strong>09/2019 – 10/2019, Gran Canaria (ESP)</strong> — artificial upwelling impacts on ocean productivity, carbon export and fish production (Ocean artUp).</li>
+        <li><strong>03/2019 – 04/2019, Kiel (GER)</strong> — independent design and implementation of an experiment on the sensitivity of fluorescent dissolved organic matter to oxygen conditions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="logo c-bund"><img src="img/logo-bund.png" alt="">BUND</div>
+    <div class="when">08/2015 – 07/2016</div>
+    <div>
+      <h3>Voluntary Ecological Year</h3>
+      <p class="where">BUND Natur-, Umwelt- und Abfallberatungsstelle, Preetz (GER)</p>
+      <p>Public relations in environmental consulting; supervising children's groups and supporting a wildlife shelter; planning and coordination of exhibitions and group events.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EDUCATION ===================== -->
+<section id="education">
+  <div class="section-head"><h2>Education</h2></div>
+
+  <div class="entry">
+    <div class="logo c-mpi"><img src="img/logo-mpi.png" alt="">MPI</div>
+    <div class="when">2022 – 2025</div>
+    <div>
+      <h3>PhD in Earth System Sciences</h3>
+      <p class="where">IMPRS on Earth System Modelling, Max Planck Institute for Meteorology, Hamburg (GER)</p>
+      <p><em>The Role of Sailboats in Advancing Our Understanding of the Ocean Carbon Sink.</em><br>Grade 1.0, magna cum laude.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="logo c-uni"><img src="img/logo-oldenburg.png" alt="">OL</div>
+    <div class="when">2019 – 2022</div>
+    <div>
+      <h3>M.Sc. Marine Umweltwissenschaften</h3>
+      <p class="where">Carl von Ossietzky Universität Oldenburg (GER)</p>
+      <p><em>Effect of Light and Upwelling Intensity on the Phytoplankton Community Composition in the Peruvian Upwelling System.</em><br>Degree grade 1.2, thesis 1.3.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="logo c-potsdam"><img src="img/logo-potsdam.png" alt="">UP</div>
+    <div class="when">2016 – 2019</div>
+    <div>
+      <h3>B.Sc. Geoökologie</h3>
+      <p class="where">Universität Potsdam (GER)</p>
+      <p><em>Identification of Biogeochemical Processes in Long-term Monitoring Data in Coastal Waters of Mecklenburg-Vorpommern.</em><br>Degree grade 1.6, thesis 1.1.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PUBLICATIONS ===================== -->
+<section id="publications">
+  <div class="section-head"><h2>Publications</h2></div>
+
+  <h3 class="subhead">Peer-reviewed</h3>
+
+  <div class="pub" id="pub-sciadv">
+    <p class="cite"><strong>Behncke, J.</strong>, Ilyina, T., Chegini, F. &amp; Landschützer, P. (2026). Improved air–sea CO<sub>2</sub> flux estimates from sailboat measurements. <em>Science Advances</em> 12(2), eadz1502. <a href="https://doi.org/10.1126/sciadv.adz1502" target="_blank" rel="noopener">doi:10.1126/sciadv.adz1502</a></p>
+    <details class="brief">
+      <summary>Findings in brief</summary>
+      <div class="inner">
+        <p>Can sailboat data improve the ocean carbon sink estimate, and how much would additional circumnavigations help? We investigated the extent to which sailboat data not only change but improve previous estimates of the ocean sink, using the ocean model MPI-OM/HAMOCC and a machine learning algorithm to test whether particular measurement strategies produce estimates more consistent with the model reality.</p>
+        <p>With the current observational network and existing sailboat data, the ocean carbon sink was underestimated. With two additional circumnavigations the estimate strengthens and agreement with the model truth improves. Data quantity can compensate for limited quality to a degree, but systematic measurement bias must be avoided.</p>
+        <p>The long-term development of CO<sub>2</sub> uptake in the Southern Ocean is still not accurately captured. More observations are needed, and sailboat data can help meet that demand.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="pub">
+    <p class="cite">Thielecke, A. U., et al. (including <strong>Behncke, J.</strong>) (2025). Disentangling upwelling: how light and nutrient supply shape primary producers and stoichiometry in the Humboldt upwelling system. <em>Deep-Sea Research Part II</em> 223, 105522. <a href="https://doi.org/10.1016/j.dsr2.2025.105522" target="_blank" rel="noopener">doi:10.1016/j.dsr2.2025.105522</a></p>
+  </div>
+
+  <div class="pub">
+    <p class="cite"><strong>Behncke, J.</strong> (2025). The role of sailboats in advancing our understanding of the ocean carbon sink. PhD thesis. <em>Berichte zur Erdsystemforschung</em> 293.</p>
+  </div>
+
+  <div class="pub" id="pub-scirep">
+    <p class="cite"><strong>Behncke, J.</strong>, Landschützer, P. &amp; Tanhua, T. (2024). A detectable change in the air–sea CO<sub>2</sub> flux estimate from sailboat measurements. <em>Scientific Reports</em> 14(1), 3345. <a href="https://doi.org/10.1038/s41598-024-53159-0" target="_blank" rel="noopener">doi:10.1038/s41598-024-53159-0</a></p>
+    <details class="brief">
+      <summary>Findings in brief</summary>
+      <div class="inner">
+        <p>How much does a single measurement campaign matter when estimating the ocean carbon sink? In the underobserved Southern Ocean, <em>p</em>CO<sub>2</sub> observations from a single sailboat change the estimate a lot.</p>
+        <p>Since 2018 the sailboat <em>Seaexplorer — Yacht Club de Monaco</em> has collected <em>p</em>CO<sub>2</sub> measurements over 129 days (2018–2021), including an Antarctic circumnavigation. These observations increase the estimated regional carbon uptake in the North Atlantic and decrease it in the Southern Ocean. Compensating changes in both basins limit the global effect, but the Southern Ocean — particularly frontal regions between 40°S and 60°S in austral summer — shows the largest air–sea CO<sub>2</sub> flux changes, averaging 20% of the regional mean.</p>
+        <p>The results stay robust within a measurement uncertainty of ±5 µatm but become undetectable with a measurement offset of 5 µatm. Sailboats therefore fill essential measurement gaps in remote ocean regions.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="pub">
+    <p class="cite">Landschützer, P., Tanhua, T., <strong>Behncke, J.</strong> &amp; Keppler, L. (2023). Sailing through the southern seas of air–sea CO<sub>2</sub> flux uncertainty. <em>Philosophical Transactions of the Royal Society A</em> 381(2249), 20220064. <a href="https://doi.org/10.1098/rsta.2022.0064" target="_blank" rel="noopener">doi:10.1098/rsta.2022.0064</a></p>
+  </div>
+
+  <h3 class="subhead">Under review and in preparation</h3>
+
+  <div class="pub">
+    <span class="tag review">Under review</span>
+    <p class="cite"><strong>Behncke, J.</strong>, et al. Effect of light and upwelling intensity on the phytoplankton community composition in the Peruvian upwelling system. <em>Deep-Sea Research Part II</em>, special issue "Eastern Boundary Upwelling Systems (EBUS): Past, Present and Future".</p>
+  </div>
+
+  <div class="pub">
+    <span class="tag prep">In preparation</span>
+    <p class="cite"><strong>Behncke, J.</strong>, Neukermans, G. &amp; Landschützer, P. Phytoplankton bloom type controls small-scale fCO<sub>2</sub> variability in high-frequency sailboat observations.</p>
+  </div>
+
+  <div class="pub">
+    <span class="tag prep">In preparation</span>
+    <p class="cite"><strong>Behncke, J.</strong>, et al. Opportunistic sampling from fisheries improves Southern Ocean carbon flux estimates.</p>
+  </div>
+</section>
+
+<!-- ===================== TALKS ===================== -->
+<section id="talks">
+  <div class="section-head"><h2>Selected presentations</h2></div>
+
+  <div class="talk"><div class="when">05/2026</div>
+    <div><span class="venue">DOOS Annual Meeting — Building a Global Ocean Carbon Observatory<span class="invited">Invited</span></span>
+    <span class="title">Improved air–sea CO<sub>2</sub> flux estimates by adding sailboat measurements</span></div></div>
+
+  <div class="talk"><div class="when">01/2026</div>
+    <div><span class="venue">TRICUSO Annual Meeting, Bergen (NOR)</span>
+    <span class="title">Improved air–sea CO<sub>2</sub> flux estimates from sailboat measurements</span></div></div>
+
+  <div class="talk"><div class="when">04/2025</div>
+    <div><span class="venue">EGU General Assembly, Vienna (AUT)</span>
+    <span class="title">Improved air–sea CO<sub>2</sub> flux estimates by adding sailboat measurements</span></div></div>
+
+  <div class="talk"><div class="when">10/2024</div>
+    <div><span class="venue">SOCCO — Southern Ocean Carbon &amp; Climate Observatory<span class="invited">Invited</span></span>
+    <span class="title">How sailboat measurements affect air–sea CO<sub>2</sub> flux estimates</span></div></div>
+
+  <div class="talk"><div class="when">02/2024</div>
+    <div><span class="venue">Ocean Sciences Meeting, New Orleans (USA)</span>
+    <span class="title">A detectable change in the air–sea CO<sub>2</sub> flux estimate from sailboat measurements</span></div></div>
+
+  <div class="talk"><div class="when">11/2023</div>
+    <div><span class="venue">Workshop on surface ocean <em>p</em>CO<sub>2</sub> observations, synthesis and data products, Oostende (BEL)<span class="invited">Invited</span></span>
+    <span class="title">A detectable change in the air–sea CO<sub>2</sub> flux estimate from sailboat measurements</span></div></div>
+
+  <div class="talk"><div class="when">07/2023</div>
+    <div><span class="venue">BGC-Argo Science Meeting<span class="invited">Invited</span></span>
+    <span class="title">Quantifying the added value of underway <em>p</em>CO<sub>2</sub> data from sailboats</span></div></div>
+
+  <div class="talk"><div class="when">05/2023</div>
+    <div><span class="venue">54th International Liège Colloquium on Ocean Dynamics, Liège (BEL)</span>
+    <span class="title">Quantifying the added value of underway <em>p</em>CO<sub>2</sub> data from sailboats</span></div></div>
+
+  <div class="talk"><div class="when">04/2023</div>
+    <div><span class="venue">SOOS SOFLUX Capability Working Group webinar<span class="invited">Invited</span></span>
+    <span class="title">Quantifying the added value of underway <em>p</em>CO<sub>2</sub> data from sailboats</span></div></div>
+
+  <div class="talk"><div class="when">01/2023</div>
+    <div><span class="venue">WMO International Greenhouse Gas Monitoring Symposium, Geneva (CHE)</span>
+    <span class="title">Quantifying the added value of underway <em>p</em>CO<sub>2</sub> data from sailboats — poster</span></div></div>
+
+  <div class="talk"><div class="when">05/2022</div>
+    <div><span class="venue">EGU General Assembly, Vienna (AUT)</span>
+    <span class="title">Effect of light and upwelling intensity on the phytoplankton community composition in the Peruvian upwelling system</span></div></div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills">
+  <div class="section-head"><h2>Skills</h2></div>
+
+  <h3 class="subhead">Programming &amp; analysis</h3>
+  <div class="bars" data-animate>
+    <div class="bar" style="--col:var(--c-orange);--pct:95%"><b>Data visualisation</b><span>Expert</span></div>
+    <div class="bar" style="--col:var(--c-plum);--pct:95%"><b>MATLAB</b><span>Expert</span></div>
+    <div class="bar" style="--col:var(--c-blue);--pct:85%"><b>Python</b><span>Advanced</span></div>
+    <div class="bar" style="--col:var(--c-teal);--pct:85%"><b>Machine learning</b><span>Advanced</span></div>
+    <div class="bar" style="--col:var(--c-olive);--pct:55%"><b>R</b><span>Intermediate</span></div>
+    <div class="bar" style="--col:var(--c-red);--pct:35%"><b>QGIS / ArcGIS</b><span>Basic</span></div>
+  </div>
+
+  <h3 class="subhead">Languages</h3>
+  <div class="bars" data-animate>
+    <div class="bar" style="--col:var(--c-blue);--pct:100%"><b>German</b><span>Native</span></div>
+    <div class="bar" style="--col:var(--c-teal);--pct:90%"><b>English</b><span>Fluent</span></div>
+  </div>
+
+  <h3 class="subhead">Toolbox</h3>
+  <div class="tiles">
+    <div class="tile" style="--c:var(--c-purple)">
+      <h4>Methods &amp; data</h4>
+      <ul class="chips">
+        <li>Machine learning</li>
+        <li>Statistical analyses</li>
+        <li>Observing system simulation experiments</li>
+        <li>Satellite remote sensing data</li>
+        <li>In situ <em>p</em>CO<sub>2</sub> data</li>
+        <li>Model data (HAMOCC, E3SM)</li>
+        <li>Stable isotope incubations</li>
+        <li>Mesocosm experiments</li>
+        <li>Sample preparation</li>
+        <li>Quality control</li>
+      </ul>
+    </div>
+    <div class="tile" style="--c:var(--c-teal)">
+      <h4>Communication &amp; collaboration</h4>
+      <ul class="chips">
+        <li>Scientific writing</li>
+        <li>Presenting</li>
+        <li>Peer review</li>
+        <li>Science communication</li>
+        <li>Scientific outreach</li>
+        <li>Supervision &amp; mentoring</li>
+        <li>Teamwork</li>
+        <li>Strategic planning</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="subhead">Grants, funding &amp; awards</h3>
+  <div class="awards">
+    <div class="award" style="--c:var(--c-blue)">
+      <strong>GEOMAR Postdoctoral Activities Call 2026</strong>
+      <span>Co-applicant, awarded (€14,700)</span>
+    </div>
+    <div class="award" style="--c:var(--c-teal)">
+      <strong>FYORD Travel Grant</strong>
+      <span>Recipient</span>
+    </div>
+    <div class="award" style="--c:var(--c-orange)">
+      <strong>Best Twitter Post Award</strong>
+      <span>SOLAS Summer School 2023, Mindelo, Cabo Verde</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OUTREACH ===================== -->
+<section id="outreach">
+  <div class="section-head"><h2>Outreach</h2></div>
+
+  <div class="cards">
+    <div class="card" style="--c:var(--c-purple)">
+      <h4>Media</h4>
+      <ul>
+        <li>Scientific expert in the ARD documentary <a href="https://www.ardmediathek.de/video/boris-herrmann-segeln-am-limit/boris-herrmann-das-rennen/ndr/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvZGE5ZjEwYTQtMjFkYS00ZDc0LThjMjYtNDY4N2ZiY2Q0YTdm" target="_blank" rel="noopener">"Boris Herrmann — Das Rennen"</a>
+          <span class="yr">NDR / ARD</span></li>
+      </ul>
+    </div>
+
+    <div class="card" style="--c:var(--c-teal)">
+      <h4>Writing &amp; editing</h4>
+      <ul>
+        <li>Editor and author, <a href="https://blogs.egu.eu/divisions/os/" target="_blank" rel="noopener">EGU Ocean Sciences blog</a>
+          <span class="yr">since 07/2024</span></li>
+        <li><a href="segeln.html">Jede Messung zählt — Segeln für die Klimaforschung</a>
+          <span class="yr">popular science, German</span></li>
+      </ul>
+    </div>
+
+    <div class="card" style="--c:var(--c-blue)">
+      <h4>Science communication</h4>
+      <ul>
+        <li>Coordinator, <a href="https://www.phdnet.mpg.de/who/workgroups/social-media-group" target="_blank" rel="noopener">Max Planck PhDnet Social Media Group</a>
+          <span class="yr">2023 – 2025</span></li>
+        <li>Editor, MPI-M Social Media Team
+          <span class="yr">2022 – 2025</span></li>
+      </ul>
+    </div>
+
+    <div class="card" style="--c:var(--c-orange)">
+      <h4>Open science</h4>
+      <ul>
+        <li>Open Science Ambassador, MPI for Meteorology
+          <span class="yr">09/2023 – 09/2024</span></li>
+        <li>Member, PhDnet Open Science Working Group
+          <span class="yr">05/2023 – 03/2024</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section id="gallery">
+  <div class="section-head"><h2>Gallery</h2></div>
+  <div class="gallery">
+    <figure><img src="img/photo-1.jpg" alt=""><figcaption>CAPTION 1</figcaption></figure>
+    <figure><img src="img/photo-2.jpg" alt=""><figcaption>CAPTION 2</figcaption></figure>
+    <figure><img src="img/photo-3.jpg" alt=""><figcaption>CAPTION 3</figcaption></figure>
+    <figure><img src="img/photo-4.jpg" alt=""><figcaption>CAPTION 4</figcaption></figure>
+    <figure><img src="img/photo-5.jpg" alt=""><figcaption>CAPTION 5</figcaption></figure>
+    <figure><img src="img/photo-6.jpg" alt=""><figcaption>CAPTION 6</figcaption></figure>
+    <figure><img src="img/photo-7.jpg" alt=""><figcaption>CAPTION 7</figcaption></figure>
+    <figure><img src="img/photo-8.jpg" alt=""><figcaption>CAPTION 8</figcaption></figure>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="section-head"><h2>Contact</h2></div>
+  <p class="contact-line"><a href="mailto:CHANGE-ME@hereon.de">CHANGE-ME@hereon.de</a></p>
+  <p class="contact-line"><a href="https://www.linkedin.com/in/jacqueline-behncke/" target="_blank" rel="noopener">linkedin.com/in/jacqueline-behncke</a></p>
+  <p class="contact-line"><a href="https://orcid.org/CHANGE-ME" target="_blank" rel="noopener">ORCID</a></p>
+  <p class="contact-line"><a href="cv/Behncke_CV.pdf" download>Download CV (PDF)</a></p>
+  <p class="colophon">
+    Helmholtz-Zentrum Hereon, Geesthacht · GEOMAR Helmholtz Centre for Ocean Research Kiel<br>
+    Built with plain HTML and CSS. No trackers, no cookies.
+  </p>
+</section>
+
+</main>
+
+<script>
+const btn = document.querySelector('.menu-btn');
+const nav = document.getElementById('site-nav');
+btn.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', String(open));
+});
+nav.addEventListener('click', e => {
+  if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+});
+
+/* scrollspy */
+const links = [...nav.querySelectorAll('a')];
+const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      links.forEach(a => a.classList.remove('active'));
+      map.get(en.target.id)?.classList.add('active');
+    }
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main section').forEach(s => spy.observe(s));
+
+/* skill bars fill on scroll */
+const barObs = new IntersectionObserver((entries, obs) => {
+  entries.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add('run'); obs.unobserve(en.target); }
+  });
+}, { threshold: 0.25 });
+document.querySelectorAll('[data-animate]').forEach(el => barObs.observe(el));
+
+/* research boxes open the matching summary panel when followed */
+document.querySelectorAll('.brief-link[href^="#"]').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelector(a.getAttribute('href') + ' .brief')?.setAttribute('open','');
+  });
+});
+
+/* missing badge/banner images degrade to the coloured fallback */
+document.querySelectorAll('.logo img, .banner img').forEach(img => {
+  img.addEventListener('error', () => img.remove());
+  if (img.complete && img.naturalWidth === 0) img.remove();
+});
+
+/* missing gallery photos remove their tile; empty gallery hides the section */
+document.querySelectorAll('.gallery img').forEach(img => {
+  const drop = () => {
+    img.closest('figure').remove();
+    if (!document.querySelectorAll('.gallery figure').length) {
+      document.getElementById('gallery').style.display = 'none';
+      document.querySelector('a[href="#gallery"]')?.parentElement.remove();
+    }
+  };
+  img.addEventListener('error', drop);
+  if (img.complete && img.naturalWidth === 0) drop();
+});
+</script>
+
+</body>
+</html>
